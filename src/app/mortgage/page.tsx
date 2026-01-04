@@ -176,6 +176,11 @@ export default function MortgagePage() {
                 onChange={(e) => setLoanTerm(Number(e.target.value))}
                 className="w-full rounded-lg border border-slate-600 bg-slate-700 py-3 px-4 text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
               >
+                <option value={1}>1 year</option>
+                <option value={2}>2 years</option>
+                <option value={3}>3 years</option>
+                <option value={4}>4 years</option>
+                <option value={5}>5 years</option>
                 <option value={10}>10 years</option>
                 <option value={15}>15 years</option>
                 <option value={20}>20 years</option>
