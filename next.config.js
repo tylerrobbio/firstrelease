@@ -5,6 +5,12 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  output: "export",
+  basePath: process.env.NODE_ENV === "production" ? "/daddy" : "",
+  images: {
+    unoptimized: true,
+  },
+};
 
 export default config;
