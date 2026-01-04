@@ -76,6 +76,7 @@ function formatCurrency(value: number): string {
 }
 
 const COLORS = ["#3b82f6", "#ef4444"];
+const FONT_STYLE = { fontFamily: "system-ui, -apple-system, sans-serif" };
 
 export default function MortgagePage() {
   const [loanAmount, setLoanAmount] = useState(400000);
@@ -232,10 +233,12 @@ export default function MortgagePage() {
                   <XAxis
                     dataKey="month"
                     stroke="#94a3b8"
+                    tick={{ ...FONT_STYLE }}
                     tickFormatter={(value) => `Yr ${Math.ceil(value / 12)}`}
                   />
                   <YAxis
                     stroke="#94a3b8"
+                    tick={{ ...FONT_STYLE }}
                     tickFormatter={(value) =>
                       `$${(value / 1000).toFixed(0)}k`
                     }
@@ -245,8 +248,9 @@ export default function MortgagePage() {
                       backgroundColor: "#1e293b",
                       border: "1px solid #334155",
                       borderRadius: "8px",
+                      ...FONT_STYLE,
                     }}
-                    labelStyle={{ color: "#f8fafc" }}
+                    labelStyle={{ color: "#f8fafc", ...FONT_STYLE }}
                     formatter={(value) => formatCurrency(value as number)}
                     labelFormatter={(label) =>
                       `Year ${Math.ceil(Number(label) / 12)}`
@@ -306,13 +310,14 @@ export default function MortgagePage() {
                       backgroundColor: "#1e293b",
                       border: "1px solid #334155",
                       borderRadius: "8px",
+                      ...FONT_STYLE,
                     }}
                     formatter={(value) => formatCurrency(value as number)}
                   />
                   <Legend
-                    wrapperStyle={{ color: "#f8fafc" }}
+                    wrapperStyle={{ color: "#f8fafc", ...FONT_STYLE }}
                     formatter={(value) => (
-                      <span style={{ color: "#f8fafc" }}>{value}</span>
+                      <span style={{ color: "#f8fafc", ...FONT_STYLE }}>{value}</span>
                     )}
                   />
                 </PieChart>
