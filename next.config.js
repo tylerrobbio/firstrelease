@@ -7,7 +7,7 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/daddy" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/firstrelease" : "",
   images: {
     unoptimized: true,
   },
